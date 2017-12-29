@@ -1,0 +1,33 @@
+###############################################################################################
+										Spring Actuator
+###############################################################################################
+Spring Boot Actuator is a sub-project of Spring Boot. It adds several production grade services to your application with little effort on your part. In this guide, you’ll build an application and then see how to add these services.
+Spring Boot includes a number of additional features to help you monitor and manage your application when it’s pushed to production. You can choose to manage and monitor your application using HTTP endpoints, with JMX or even by remote shell (SSH or Telnet). Auditing, health and metrics gathering can be automatically applied to your application.
+
+
+How to enable the production ready features?
+Steps:
+1.	 Add Maven or dependency as follows:
+	For Maven Project:
+	---------------------------------------------------------------------------
+	<dependencies>
+	    <dependency>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-starter-actuator</artifactId>
+	    </dependency>
+	</dependencies>
+    --------------------------------------------------------------------------
+	For Gradle Project:
+	---------------------------------------------------------------------------
+		dependencies {
+		    compile("org.springframework.boot:spring-boot-starter-actuator")
+		}
+    ---------------------------------------------------------------------------
+2.	Add below properties in Application.properties file
+	info.app.name=application name
+	info.app.description=This is query engine application that generate dynamic queries
+	info.app.version=1.0.0
+	endpoints.metrics.id=metrics
+	endpoints.metrics.sensitive=true
+	endpoints.metrics.enabled=true
+
